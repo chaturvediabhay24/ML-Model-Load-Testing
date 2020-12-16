@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+
+   <body>
+   <h1>Imagenet model api</h1>
+		    <form action = "{{ url_for('predict')}}" method = "POST"
+		        enctype = "multipart/form-data">
+		        <input type = "file" name = "file" />
+		        <input type = "submit"/>
+		    </form>
+          	<strong>
+      			{{ prediction_text }}
+    		</strong>
+   </body>
+</html>

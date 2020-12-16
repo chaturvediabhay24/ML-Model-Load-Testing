@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>SHAKESPHERE POETRY PREDICTION</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <p>Enter few lines of shakesphere poetry. our model will predict the rest.</p>
+    	<input type="text" name="experience" placeholder="Type here..." required="required" />
+      <p>Enter no of words you want the model to predict.</p>
+        <input type="text" name="test_score" placeholder="Enter words" required="required" />
+<!-- 		<input type="text" name="interview_score" placeholder="Interview Score" required="required" /> -->
+<br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+    <strong>
+      {{ prediction_text }}
+    </strong>
+ </div>
+
+
+</body>
+</html>
